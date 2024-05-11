@@ -36,6 +36,7 @@ const ModalWindow = ({date, title, content, author, url}) => {
         <div className="bottom">
           <div className="author">
         <p>{author.name}</p>
+        <p>-</p>
         <p>{author.role}</p>
         </div>
         <p>{date}</p>
