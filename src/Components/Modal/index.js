@@ -17,8 +17,14 @@ const ModalWindow = ({date, title, content, author, url}) => {
 
   return (
     <div className='modal-window'>
-      <ImageSlider srcUrl={url.large}/>
+      
       <div onClick={openModal}>
+      <ImageSlider srcUrl={url.large}/>
+      <div class="dots-container">
+        <span class="dot cyan"></span>
+        <span class="dot orange"></span>
+      </div>
+
         <h2>{title}</h2>
         <p>{content}</p>
         <div className="bottom">

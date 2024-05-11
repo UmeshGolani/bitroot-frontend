@@ -69,3 +69,24 @@
   .author{
     display: flex;
   }
+
+  .dots-container {
+    display: flex;
+    /* align-items: center; */
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 3px;
+  }
+  
+  .cyan {
+    background-color: cyan;
+  }
+  
+  .orange {
+    background-color: orange;
+  }
+  
