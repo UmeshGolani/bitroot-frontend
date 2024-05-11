@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     fetchData(data);
-  },[]);
+  },[data]);
 
   const fetchData = () => {
     axios.get("https://my-json-server.typicode.com/Codeinwp/front-end-internship-api/posts")
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       {data.map((def,i) => (
-        <ModalWindow date={def.date} title={def.title} content={def.content} author={def.author}/>
+        <ModalWindow date={def.date} title={def.title} content={def.content} author={def.author} url={def.thumbnail}/>
       ))}
     </div>
     

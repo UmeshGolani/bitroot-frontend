@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 import { convertDate } from '../functions/convertDate';
 import ImageSlider from '../ImageSlider';
-
-const ModalWindow = ({date, title, content, author, image}) => {
+import './style.css'
+const ModalWindow = ({date, title, content, author, url}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -17,19 +17,29 @@ const ModalWindow = ({date, title, content, author, image}) => {
 
   return (
     <div className='modal-window'>
-      <ImageSlider srcUrl={author.avatar}/>
-      <div onClick={openModal}><h2>{title}</h2>
-        <p>{content}</p>
-        <p>{author.name}</p>
-        <p>{author.role}</p>
-        <p>{date}</p></div>
-      <Modal isOpen={isOpen} onClose={closeModal}>
-      <ImageSlider srcUrl={author.avatar}/>
+      <ImageSlider srcUrl={url.large}/>
+      <div onClick={openModal}>
         <h2>{title}</h2>
         <p>{content}</p>
+        <div className="bottom">
+          <div className="author">
+        <p>{author.name}</p>
+        <p>-</p>
+        <p>{author.role}</p>
+        </div>
+        <p>{date}</p></div>
+        </div>
+      <Modal isOpen={isOpen} onClose={closeModal}>
+      <img src={url.small} alt="" className='modal-img'/>
+        <h2>{title}</h2>
+        <p>{content}</p>
+        <div className="bottom">
+          <div className="author">
         <p>{author.name}</p>
         <p>{author.role}</p>
+        </div>
         <p>{date}</p>
+        </div>
 
       </Modal>
     </div>
